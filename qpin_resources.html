@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QPIN - Resources</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #e0e1dd;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 80px 0;
+            background: url('https://via.placeholder.com/1200x400/0d1b2a/1b263b?text=Quantum+Knowledge') no-repeat center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #00c4b4;
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease;
+        }
+        .header h2 {
+            font-size: 24px;
+            font-style: italic;
+            color: #778da9;
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .intro p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.8s forwards;
+            opacity: 0;
+        }
+
+        /* Resources Section */
+        .resources-section {
+            padding: 60px 0;
+        }
+        .resources-section h3 {
+            font-size: 32px;
+            color: #00c4b4;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .resource-category {
+            margin-bottom: 50px;
+        }
+        .resource-category h4 {
+            font-size: 24px;
+            color: #00c4b4;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .resource-card {
+            background: rgba(27, 38, 59, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 196, 180, 0.4);
+        }
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 196, 180, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .resource-card:hover::before {
+            opacity: 1;
+        }
+        .resource-card h5 {
+            font-size: 20px;
+            color: #e0e1dd;
+            margin-bottom: 10px;
+            z-index: 1;
+            position: relative;
+        }
+        .resource-card p {
+            font-size: 16px;
+            color: #778da9;
+            margin-bottom: 15px;
+            z-index: 1;
+            position: relative;
+        }
+        .resource-card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #00c4b4;
+            color: #0d1b2a;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+            z-index: 1;
+            position: relative;
+        }
+        .resource-card a:hover {
+            background: #778da9;
+            color: #e0e1dd;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 36px; }
+            .header h2 { font-size: 20px; }
+            .resource-list { grid-template-columns: 1fr; }
+            .resource-card { padding: 15px; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <h1>Resources</h1>
+            <h2>Empowering Quantum Knowledge</h2>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro">
+        <div class="container">
+            <p>Dive into the world of quantum computing with QPIN’s curated resources. From understanding the basics to exploring future applications, we’re here to educate and inspire. Aligned with our mission to accelerate India’s quantum revolution, these tools—many open-source—support researchers, students, and innovators as we scale from 100 qubits in 2026 to 100,000 by 2045.</p>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <!-- Quantum Computing Basics -->
+            <div class="resource-category">
+                <h3>Quantum Computing Basics</h3>
+                <h4>Learn the Foundations</h4>
+                <div class="resource-list">
+                    <div class="resource-card">
+                        <h5>QPIN Quantum Primer</h5>
+                        <p>A beginner’s guide to qubits, superposition, and entanglement—crafted by our experts to kickstart your quantum journey.</p>
+                        <a href="#">Download PDF</a>
+                    </div>
+                    <div class="resource-card">
+                        <h5>Qiskit Textbook</h5>
+                        <p>An open-source, interactive guide to quantum computing, used in our 100-qubit project. Perfect for coding your first quantum circuit.</p>
+                        <a href="https://qiskit.org/textbook" target="_blank">Visit Site</a>
+                    </div>
+                    <div class="resource-card">
+                        <h5>Quantum Computing for the Curious</h5>
+                        <p>Free video series by Chris Ferrie, explaining quantum mechanics in simple terms—ideal for students and enthusiasts.</p>
+                        <a href="https://quantumcomputingforthecurious.org/" target="_blank">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Applications -->
+            <div class="resource-category">
+                <h3>Future Applications</h3>
+                <h4>Where Quantum is Headed</h4>
+                <div class="resource-list">
+                    <div class="resource-card">
+                        <h5>Quantum Cryptography Whitepaper</h5>
+                        <p>Explore how our 500-qubit goal (2033) will secure India’s digital future against classical attacks—by QPIN’s R&D team.</p>
+                        <a href="#">Download PDF</a>
+                    </div>
+                    <div class="resource-card">
+                        <h5>Nature: Quantum Chemistry</h5>
+                        <p>A 2023 article on how quantum computers (like our 100-qubit system) simulate molecules, revolutionizing drug discovery.</p>
+                        <a href="https://www.nature.com/articles/s41586-023-05871-6" target="_blank">Read Article</a>
+                    </div>
+                    <div class="resource-card">
+                        <h5>McKinsey: Quantum Optimization</h5>
+                        <p>Real-world insights on quantum’s potential to optimize logistics and energy—aligned with QPIN’s 2029-2045 goals.</p>
+                        <a href="https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/quantum-computing" target="_blank">Read Report</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Open-Source Tools -->
+            <div class="resource-category">
+                <h3>Open-Source Tools</h3>
+                <h4>Build With Us</h4>
+                <div class="resource-list">
+                    <div class="resource-card">
+                        <h5>Qiskit</h5>
+                        <p>IBM’s open-source framework powering our 100-qubit processor. Code, simulate, and run quantum algorithms—all free.</p>
+                        <a href="https://qiskit.org/" target="_blank">Get Started</a>
+                    </div>
+                    <div class="resource-card">
+                        <h5>Cirq</h5>
+                        <p>Google’s open-source library for NISQ systems. Experiment with circuits compatible with QPIN’s future upgrades.</p>
+                        <a href="https://quantumai.google/cirq" target="_blank">Explore Cirq</a>
+                    </div>
+                    <div class="resource-card">
+                        <h5>PennyLane</h5>
+                        <p>An open-source tool for quantum machine learning, supporting hybrid algorithms—key for QPIN’s 2036 AI goals.</p>
+                        <a href="https://pennylane.ai/" target="_blank">Download Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QPIN Contributions -->
+            <div class="resource-category">
+                <h3>QPIN Contributions</h3>
+                <h4>Our Open-Source Efforts</h4>
+                <div class="resource-list">
+                    <div class="resource-card">
+                        <h5>QPIN RCS Benchmark Code</h5>
+                        <p>Post-2026, access our open-source Random Circuit Sampling scripts used to benchmark our 100-qubit system vs. classical supercomputers.</p>
+                        <a href="#">Coming Soon</a>
+                    </div>
+                    <div class="resource-card">
+                        <h5>Quantum India Toolkit</h5>
+                        <p>A QPIN-developed open-source kit for educators, launching 2027, with simulations and lesson plans for QII trainees.</p>
+                        <a href="#">Coming Soon</a>
+                    </div>
+                    <div class="resource-card">
+                        <h5>Shor’s Algorithm Demo</h5>
+                        <p>Our 10-qubit factorization code, open-sourced post-2026, showcasing quantum speedups—free for all to adapt.</p>
+                        <a href="#">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

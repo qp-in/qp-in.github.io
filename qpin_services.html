@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QPIN - Our Services</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #e0e1dd;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 80px 0;
+            background: url('https://via.placeholder.com/1200x400/0d1b2a/1b263b?text=Quantum+Wave') no-repeat center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #00c4b4;
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease;
+        }
+        .header h2 {
+            font-size: 24px;
+            font-style: italic;
+            color: #778da9;
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 60px 0;
+        }
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        .intro p {
+            font-size: 18px;
+            color: #e0e1dd;
+            animation: fadeInUp 1s ease 0.8s forwards;
+            opacity: 0;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: rgba(27, 38, 59, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 1s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 196, 180, 0.4);
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 196, 180, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        .service-card h3 {
+            font-size: 24px;
+            color: #00c4b4;
+            margin-bottom: 10px;
+            z-index: 1;
+            position: relative;
+        }
+        .service-card h4 {
+            font-size: 18px;
+            font-style: italic;
+            color: #778da9;
+            margin-bottom: 20px;
+            z-index: 1;
+            position: relative;
+        }
+        .service-card ul {
+            list-style: none;
+            font-size: 16px;
+            text-align: left;
+            z-index: 1;
+            position: relative;
+        }
+        .service-card ul li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .service-card ul li::before {
+            content: '⚛';
+            position: absolute;
+            left: 0;
+            color: #00c4b4;
+            font-size: 14px;
+        }
+
+        /* Call to Action */
+        .cta {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #00c4b4;
+            color: #0d1b2a;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+        .cta a:hover {
+            background: #778da9;
+            color: #e0e1dd;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 36px; }
+            .header h2 { font-size: 20px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card { padding: 20px; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <h2>Unlocking Quantum Possibilities</h2>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="intro">
+                <p>At QPIN Private Limited, we’re more than just a quantum hardware provider—we’re your partner in navigating the quantum revolution. Leveraging our state-of-the-art 100-qubit quantum processor and a world-class team, we offer a suite of services designed to empower researchers, industries, and policymakers. From cutting-edge research to real-world applications, our services are India’s gateway to quantum innovation.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <h3>Quantum Computing Access</h3>
+                    <h4>Harness the Power of Qubits</h4>
+                    <ul>
+                        <li>Gain cloud-based access to our 100-qubit processor by December 2026.</li>
+                        <li>Run Shor’s, VQE, or Grover’s with >95% uptime, T1 >120 µs, fidelity >99.9%.</li>
+                        <li>For researchers, startups, and enterprises via Qiskit on AWS EC2.</li>
+                    </ul>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <h3>Quantum Algorithm Development</h3>
+                    <h4>Code the Future</h4>
+                    <ul>
+                        <li>Design custom quantum algorithms (e.g., QAOA, VQE) with our experts.</li>
+                        <li>Hybrid solutions for optimization and cryptanalysis (₹5-10 crore).</li>
+                        <li>For academia, tech firms, and government agencies.</li>
+                    </ul>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <h3>Quantum Hardware Consulting</h3>
+                    <h4>Build Your Quantum Edge</h4>
+                    <ul>
+                        <li>Expert guidance on chip procurement and lab setup (₹2-5 crore).</li>
+                        <li>Includes cryostat and control system optimization.</li>
+                        <li>For universities, labs, and corporations scaling quantum tech.</li>
+                    </ul>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <h3>Quantum Workforce Training</h3>
+                    <h4>Empower Your Team</h4>
+                    <ul>
+                        <li>Hands-on workshops on Qiskit, hardware (₹1-2 lakh/participant).</li>
+                        <li>1-3 month programs starting 2026, led by our 20-person team.</li>
+                        <li>For students, engineers, and professionals entering quantum.</li>
+                    </ul>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <h3>Quantum Research Partnerships</h3>
+                    <h4>Innovate Together</h4>
+                    <ul>
+                        <li>Co-develop projects in cryptography, AI (₹10-20 crore).</li>
+                        <li>Access to our 100-qubit lab and data for global institutions.</li>
+                        <li>Results in papers, patents, scalable solutions by 2030.</li>
+                    </ul>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <h3>Quantum Application Development</h3>
+                    <h4>Solve Real-World Problems</h4>
+                    <ul>
+                        <li>End-to-end solutions for drug discovery, logistics (₹15-25 crore).</li>
+                        <li>Prototypes in <12 months using our processor.</li>
+                        <li>For pharma, finance, and defense sectors.</li>
+                    </ul>
+                </div>
+                <!-- Service 7 -->
+                <div class="service-card">
+                    <h3>Quantum Benchmarking & Validation</h3>
+                    <h4>Measure Your Progress</h4>
+                    <ul>
+                        <li>Benchmark RCS, fidelity (>99.9%), coherence (₹1-3 crore).</li>
+                        <li>Compare to IBM Condor, Google Willow standards.</li>
+                        <li>For hardware vendors and software developers.</li>
+                    </ul>
+                </div>
+                <!-- Service 8 -->
+                <div class="service-card">
+                    <h3>Quantum Infrastructure Leasing</h3>
+                    <h4>Access World-Class Facilities</h4>
+                    <ul>
+                        <li>Lease Triton 500 cryostat, Zurich Kit (₹5-10 crore/month).</li>
+                        <li>Fully staffed, available from 2027.</li>
+                        <li>For labs needing temporary quantum setups.</li>
+                    </ul>
+                </div>
+                <!-- Service 9 -->
+                <div class="service-card">
+                    <h3>Quantum Policy Advisory</h3>
+                    <h4>Shape the Landscape</h4>
+                    <ul>
+                        <li>Advise on funding, regulation from ₹369 crore insights.</li>
+                        <li>Whitepapers, workshops (pro bono or ₹1-2 crore).</li>
+                        <li>For ministries and international consortia.</li>
+                    </ul>
+                </div>
+                <!-- Service 10 -->
+                <div class="service-card">
+                    <h3>Quantum Education Outreach</h3>
+                    <h4>Inspire the Next Generation</h4>
+                    <ul>
+                        <li>Free seminars, demos for schools, colleges (₹7 crore).</li>
+                        <li>Interactive quantum literacy programs.</li>
+                        <li>Building India’s quantum talent by 2035.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <a href="#">Get Started Today</a>
+        </div>
+    </section>
+</body>
+</html>

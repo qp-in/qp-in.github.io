@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QPIN - FAQ</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #e0e1dd;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 80px 0;
+            background: url('https://via.placeholder.com/1200x400/0d1b2a/1b263b?text=Quantum+Questions') no-repeat center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #00c4b4;
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease;
+        }
+        .header h2 {
+            font-size: 24px;
+            font-style: italic;
+            color: #778da9;
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+        }
+        .faq-section h3 {
+            font-size: 32px;
+            color: #00c4b4;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .accordion {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: rgba(27, 38, 59, 0.9);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .faq-item:hover {
+            box-shadow: 0 10px 20px rgba(0, 196, 180, 0.4);
+        }
+        .faq-question {
+            padding: 20px;
+            font-size: 20px;
+            color: #e0e1dd;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '▼';
+            color: #00c4b4;
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            font-size: 16px;
+            color: #778da9;
+            background: rgba(13, 27, 42, 0.9);
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px; /* Adjust based on content */
+            padding: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 36px; }
+            .header h2 { font-size: 20px; }
+            .faq-question { font-size: 18px; }
+            .faq-answer { font-size: 14px; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <h1>FAQ</h1>
+            <h2>Your Quantum Questions Answered</h2>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h3>Frequently Asked Questions</h3>
+            <div class="accordion">
+                <!-- QPIN Related -->
+                <div class="faq-item">
+                    <div class="faq-question">What is QPIN Private Limited?</div>
+                    <div class="faq-answer">QPIN is India’s quantum trailblazer, established under the Ministry of Science and Technology to build cutting-edge quantum processors. Our ₹369 crore 100-qubit project by 2026 is just the start—unlocking solutions for society, from secure banking to sustainable energy.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is the 100-qubit quantum processor project?</div>
+                    <div class="faq-answer">Launched June 2, 2025, this ₹369 crore initiative delivers a 100-qubit processor by December 2026. It’s faster than supercomputers for specific tasks—like factoring numbers in minutes—paving the way for breakthroughs in cryptography and medicine, benefiting everyone.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does QPIN collaborate with others?</div>
+                    <div class="faq-answer">We partner with IITs, Oxford Instruments, and AWS to blend expertise and innovation. These collaborations mean faster tech for India—like secure data and optimized transport—making life better for millions.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What’s next after the 100-qubit processor?</div>
+                    <div class="faq-answer">We’re scaling to 1000 qubits by 2035 and 100,000 by 2045, solving grand challenges like climate modeling. This means cleaner air and smarter cities for future generations.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How can I join QPIN’s team?</div>
+                    <div class="faq-answer">We’re hiring physicists, engineers, and more for our 2025-2026 project! Check our Careers page and send your resume to careers@qpin.in. Your work could shape society’s tech future.</div>
+                </div>
+
+                <!-- India’s Mission Related -->
+                <div class="faq-item">
+                    <div class="faq-question">Why is India investing in quantum tech?</div>
+                    <div class="faq-answer">India aims to lead the global tech race, solving national challenges like cybersecurity and healthcare. Quantum tech means safer digital transactions and faster drug discovery—lifting millions out of poverty and illness.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does QPIN fit into India’s National Quantum Mission?</div>
+                    <div class="faq-answer">QPIN is a key player in India’s NQM, launched in 2023 with ₹6000 crore. Our 100-qubit project accelerates this vision, creating jobs and tech that protect and prosper society.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Will quantum computing create jobs in India?</div>
+                    <div class="faq-answer">Yes! We’re training 100,000 quantum experts by 2045 via QII and Quantum Corps. These jobs—from coding to research—will boost India’s economy and empower youth.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How will India use quantum tech for society?</div>
+                    <div class="faq-answer">From optimizing Railways (saving ₹500 crore by 2030) to modeling monsoons (better farming by 2040), quantum tech will improve infrastructure and food security for all Indians.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can India rival global quantum leaders?</div>
+                    <div class="faq-answer">Absolutely. With ₹369 crore, we match IBM’s ₹900 crore efficiency. By 2045, hosting the World Quantum Summit, India will lead, sharing solutions globally.</div>
+                </div>
+
+                <!-- World’s Roadmap Related -->
+                <div class="faq-item">
+                    <div class="faq-question">What’s the global state of quantum computing in 2025?</div>
+                    <div class="faq-answer">IBM’s at 1,121 qubits (Condor), Google’s pushing fault-tolerance. QPIN’s 100 qubits join this race, offering affordable innovation for societal good—like cheaper medicine.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does quantum computing differ from classical?</div>
+                    <div class="faq-answer">Quantum uses qubits—superposition and entanglement—to solve problems exponentially faster. This means curing diseases or optimizing energy grids in ways classical PCs can’t, benefiting humanity.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What’s the world’s quantum goal by 2035?</div>
+                    <div class="faq-answer">Global leaders aim for fault-tolerant systems (10⁶ qubits). QPIN’s 1000-qubit target aligns here, promising secure communications and climate solutions for a safer planet.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Will quantum computing break encryption?</div>
+                    <div class="faq-answer">Yes, by 2033 (QPIN’s 500 qubits), Shor’s algorithm could crack AES. But it also drives post-quantum cryptography, keeping your data safe in a digital world.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How will quantum tech impact climate change?</div>
+                    <div class="faq-answer">By 2040, QPIN and others will model climate with 10,000 qubits, optimizing renewables and cutting emissions—giving society a fighting chance against global warming.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What’s the biggest quantum challenge globally?</div>
+                    <div class="faq-answer">Error correction—reducing noise below 10⁻⁶. QPIN’s tackling this by 2033, ensuring reliable tech for healthcare and logistics improvements worldwide.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How does quantum computing help AI?</div>
+                    <div class="faq-answer">By 2036, QPIN’s 1000 qubits will speed up AI training (e.g., quantum neural nets), enhancing diagnostics and smart cities—making life healthier and easier.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Who are the global quantum leaders?</div>
+                    <div class="faq-answer">IBM, Google, and China lead now. QPIN’s cost-efficient 100-qubit leap shows India—and society—can benefit from this race without breaking the bank.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What’s the ultimate quantum dream?</div>
+                    <div class="faq-answer">By 2045, millions of qubits could simulate reality itself—solving hunger with optimized agriculture or curing cancer with perfect drugs. QPIN’s part of that dream for all.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                const isActive = parent.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+                if (!isActive) parent.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

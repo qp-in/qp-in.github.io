@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QPIN - Research & Development</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #e0e1dd;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 80px 0;
+            background: url('https://via.placeholder.com/1200x400/0d1b2a/1b263b?text=Quantum+Circuit') no-repeat center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #00c4b4;
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease;
+        }
+        .header h2 {
+            font-size: 24px;
+            font-style: italic;
+            color: #778da9;
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(119, 141, 169, 0.3);
+        }
+        .section h3 {
+            font-size: 32px;
+            color: #00c4b4;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .section p {
+            font-size: 18px;
+            color: #e0e1dd;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Standing Section */
+        .standing {
+            text-align: center;
+            background: rgba(27, 38, 59, 0.8);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px 0;
+            animation: slideIn 1s ease;
+        }
+
+        /* Roadmap Section */
+        .roadmap {
+            position: relative;
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #00c4b4, #778da9);
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            background: rgba(13, 27, 42, 0.9);
+            border-radius: 10px;
+            margin: 20px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 196, 180, 0.3);
+        }
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+        .timeline-item.right {
+            left: 55%;
+            text-align: left;
+        }
+        .timeline-item h4 {
+            font-size: 24px;
+            color: #00c4b4;
+            margin-bottom: 10px;
+        }
+        .timeline-item ul {
+            list-style: none;
+            font-size: 16px;
+        }
+        .timeline-item ul li {
+            margin: 10px 0;
+        }
+        .timeline-item ul li strong {
+            color: #778da9;
+        }
+        .timeline-dot {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #00c4b4;
+            border-radius: 50%;
+            top: 30px;
+            z-index: 1;
+        }
+        .timeline-item.left .timeline-dot {
+            right: -28px;
+        }
+        .timeline-item.right .timeline-dot {
+            left: -28px;
+        }
+
+        /* Problems Solved Section */
+        .problems {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .problem-card {
+            background: rgba(27, 38, 59, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .problem-card:hover {
+            transform: scale(1.05);
+        }
+        .problem-card h4 {
+            font-size: 20px;
+            color: #00c4b4;
+            margin-bottom: 10px;
+        }
+        .problem-card p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* Quantum Force Section */
+        .quantum-force {
+            text-align: center;
+            background: linear-gradient(45deg, #0d1b2a, #1b263b);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        .force-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .stat {
+            font-size: 18px;
+            color: #00c4b4;
+        }
+        .stat span {
+            font-size: 24px;
+            font-weight: 700;
+            color: #e0e1dd;
+        }
+
+        /* Why QPIN Leads Section */
+        .why-leads ul {
+            list-style: none;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .why-leads ul li {
+            font-size: 18px;
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        .why-leads ul li::before {
+            content: '⚛';
+            position: absolute;
+            left: 0;
+            color: #00c4b4;
+            font-size: 20px;
+        }
+
+        /* Call to Action */
+        .cta {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #00c4b4;
+            color: #0d1b2a;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 25px;
+            margin: 10px;
+            transition: background 0.3s ease;
+        }
+        .cta a:hover {
+            background: #778da9;
+            color: #e0e1dd;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <h1>Research & Development</h1>
+            <h2>Forging India’s Quantum Legacy</h2>
+        </div>
+    </section>
+
+    <!-- Standing -->
+    <section class="section standing">
+        <div class="container">
+            <h3>Our Standing</h3>
+            <p>QPIN stands as India’s premier quantum entity, backed by the Ministry of Science and Technology, with a proven track record of delivering cutting-edge systems on time and budget. Our 100-qubit processor, operational by December 2026, marks the beginning—a springboard to rival IBM’s 1,121-qubit Condor (2027) and Google’s Willow (2024) in efficiency and impact. With coherence times exceeding 120 µs, fidelities above 99.9%, and a scalable architecture, we’re poised to leapfrog global benchmarks, training India’s quantum pioneers to dominate the field by 2045.</p>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="section roadmap">
+        <div class="container">
+            <h3>Projected Roadmap: 2025-2045</h3>
+            <p><em>From 100 Qubits to Global Leadership</em></p>
+            <div class="timeline">
+                <!-- 2025-2026 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <h4>2025-2026: Foundation & Kickoff</h4>
+                    <ul>
+                        <li><strong>Activity:</strong> Establish R&D labs, hire 50 quantum experts (₹50 crore).</li>
+                        <li><strong>Milestone:</strong> Launch "Quantum India Initiative" (QII)—train 500 students (₹10 crore).</li>
+                        <li><strong>Focus:</strong> Benchmark 100-qubit RCS vs. IBM Eagle, Google Willow (10²⁵ years classical).</li>
+                        <li><strong>Outcome:</strong> India’s first quantum talent pipeline begins.</li>
+                    </ul>
+                </div>
+                <!-- 2027-2028 -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <h4>2027-2028: Early Scaling</h4>
+                    <ul>
+                        <li><strong>Activity:</strong> Upgrade to 200 qubits (₹300 crore), fault-tolerant prototypes.</li>
+                        <li><strong>Milestone:</strong> Solve 50-bit ECDLP with Shor’s (<1 hour, 10¹⁵ years classical).</li>
+                        <li><strong>Training:</strong> Expand QII to 2,000 trainees with IITs/IISc (₹25 crore).</li>
+                        <li><strong>Outcome:</strong> Joins 200-qubit club, matches IBM Osprey scale.</li>
+                    </ul>
+                </div>
+                <!-- 2029-2030 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <h4>2029-2030: Mid-Scale Breakthrough</h4>
+                    <ul>
+                        <li><strong>Activity:</strong> Deploy 300 qubits (₹405 crore), error rate <0.1%.</li>
+                        <li><strong>Milestone:</strong> Optimize Indian Railways logistics (10x faster, ₹500 crore savings).</li>
+                        <li><strong>Training:</strong> Train 5,000 via "Quantum Corps" (₹50 crore).</li>
+                        <li><strong>Outcome:</strong> Rivals Google’s 2030 goals with practical applications.</li>
+                    </ul>
+                </div>
+                <!-- 2031-2033 -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <h4>2031-2033: Fault-Tolerance Threshold</h4>
+                    <ul>
+                        <li><strong>Activity:</strong> Scale to 500 qubits (₹800 crore), 100 logical qubits.</li>
+                        <li><strong>Milestone:</strong> Crack 128-bit AES (<1 day), post-quantum urgency.</li>
+                        <li><strong>Training:</strong> Quantum Corps to 10,000, 50 PhDs/year (₹100 crore).</li>
+                        <li><strong>Outcome:</strong> Matches IBM’s 2033 fault-tolerance, leads in security.</li>
+                    </ul>
+                </div>
+                <!-- 2034-2036 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <h4>2034-2036: Quantum Advantage Era</h4>
+                    <ul>
+                        <li><strong>Activity:</strong> Reach 1000 qubits (₹1500 crore), 250 logical qubits.</li>
+                        <li><strong>Milestone:</strong> Simulate nitrogen fixation catalysts (20% cost reduction).</li>
+                        <li><strong>Training:</strong> National Quantum Academy (NQA), 25,000 trained (₹200 crore).</li>
+                        <li><strong>Outcome:</strong> Leapfrogs Google’s 2035 vision, solves national issues.</li>
+                    </ul>
+                </div>
+                <!-- 2037-2040 -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <h4>2037-2040: Quantum Supremacy</h4>
+                    <ul>
+                        <li><strong>Activity:</strong> Deploy 10,000 qubits (₹5000 crore), 1000+ logical qubits.</li>
+                        <li><strong>Milestone:</strong> Break secp256k1 (<1 week), global crypto shift.</li>
+                        <li><strong>Training:</strong> NQA graduates 50,000, 500 startups (₹300 crore).</li>
+                        <li><strong>Outcome:</strong> Equals IBM’s 2040 scale, leads in cryptography.</li>
+                    </ul>
+                </div>
+                <!-- 2041-2045 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <h4>2041-2045: Global Quantum Leadership</h4>
+                    <ul>
+                        <li><strong>Activity:</strong> Scale to 100,000 qubits (₹15,000 crore), error ~10⁻⁹.</li>
+                        <li><strong>Milestone:</strong> Optimize energy grid (15% loss cut, ₹1 lakh crore savings).</li>
+                        <li><strong>Training:</strong> 100,000 workforce, host World Quantum Summit (₹500 crore).</li>
+                        <li><strong>Outcome:</strong> Surpasses IBM/Google, quantum R&D hub.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Solved -->
+    <section class="section">
+        <div class="container">
+            <h3>Key Problems We’ll Solve</h3>
+            <div class="problems">
+                <div class="problem-card">
+                    <h4>Cryptography (2033-2040)</h4>
+                    <p>Transition India to post-quantum security, protecting digital infrastructure.</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Optimization (2029-2045)</h4>
+                    <p>Revolutionize logistics, energy, and urban planning with quantum efficiency.</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Materials Science (2030-2045)</h4>
+                    <p>Design sustainable materials, from catalysts to superconductors.</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Climate Modeling (2036-2045)</h4>
+                    <p>Combat climate change with precise simulations and solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quantum Force -->
+    <section class="section quantum-force">
+        <div class="container">
+            <h3>Building India’s Quantum Force</h3>
+            <p>From 100 qubits in 2026, we’re cultivating a quantum workforce to lead the world:</p>
+            <div class="force-stats">
+                <div class="stat">2025-2030: <span>7,500</span> Pioneers</div>
+                <div class="stat">2031-2040: <span>60,000</span> Experts</div>
+                <div class="stat">2041-2045: <span>100,000</span> Leaders</div>
+            </div>
+            <p>By 2045, every qubit we build will be matched by a skilled mind—making India the quantum capital.</p>
+        </div>
+    </section>
+
+    <!-- Why QPIN Leads -->
+    <section class="section why-leads">
+        <div class="container">
+            <h3>Why QPIN Leads</h3>
+            <ul>
+                <li><strong>Government Backing:</strong> Ministry support ensures funding and policy alignment (₹15,000 crore by 2045).</li>
+                <li><strong>Cost Efficiency:</strong> ₹369 crore for 100 qubits vs. IBM’s ₹900 crore—India scales smarter.</li>
+                <li><strong>Collaboration:</strong> Partnerships with IITs, IISc, and global firms accelerate progress.</li>
+                <li><strong>Vision:</strong> From 100 to 100,000 qubits, solving India’s problems first, then the world’s.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <a href="#">Partner With Us</a>
+            <a href="#">Join Our Team</a>
+            <a href="#">Explore Milestones</a>
+        </div>
+    </section>
+</body>
+</html>

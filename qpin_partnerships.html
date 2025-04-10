@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QPIN - Partnerships & Collaborations</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #e0e1dd;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 80px 0;
+            background: url('https://via.placeholder.com/1200x400/0d1b2a/1b263b?text=Quantum+Network') no-repeat center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #00c4b4;
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease;
+        }
+        .header h2 {
+            font-size: 24px;
+            font-style: italic;
+            color: #778da9;
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .intro p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.8s forwards;
+            opacity: 0;
+        }
+
+        /* Partners Section */
+        .partners-section {
+            padding: 60px 0;
+        }
+        .partners-section h3 {
+            font-size: 32px;
+            color: #00c4b4;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .partner-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 20px;
+            scroll-behavior: smooth;
+        }
+        .partner-card {
+            flex: 0 0 300px;
+            background: rgba(27, 38, 59, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .partner-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 196, 180, 0.4);
+        }
+        .partner-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            background: #e0e1dd;
+        }
+        .partner-card h4 {
+            font-size: 20px;
+            color: #00c4b4;
+            margin-bottom: 10px;
+        }
+        .partner-card p {
+            font-size: 16px;
+            color: #e0e1dd;
+        }
+
+        /* Success Stories */
+        .success-stories {
+            padding: 60px 0;
+            background: rgba(13, 27, 42, 0.9);
+        }
+        .story-card {
+            background: rgba(27, 38, 59, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+        .story-card:hover {
+            transform: translateY(-5px);
+        }
+        .story-card h4 {
+            font-size: 24px;
+            color: #00c4b4;
+            margin-bottom: 10px;
+        }
+        .story-card p {
+            font-size: 16px;
+        }
+
+        /* Collaboration Form */
+        .collaboration {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .collaboration h3 {
+            font-size: 32px;
+            color: #00c4b4;
+            margin-bottom: 20px;
+        }
+        .collaboration p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .collaboration form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .collaboration input, .collaboration textarea, .collaboration select {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(119, 141, 169, 0.2);
+            color: #e0e1dd;
+            font-size: 16px;
+        }
+        .collaboration input:focus, .collaboration textarea:focus, .collaboration select:focus {
+            outline: none;
+            box-shadow: 0 0 5px #00c4b4;
+        }
+        .collaboration button {
+            padding: 15px;
+            background: #00c4b4;
+            color: #0d1b2a;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .collaboration button:hover {
+            background: #778da9;
+            color: #e0e1dd;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 36px; }
+            .header h2 { font-size: 20px; }
+            .partner-carousel { flex-direction: column; }
+            .partner-card { flex: 0 0 auto; width: 100%; }
+            .collaboration form { padding: 0 20px; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <h1>Partnerships & Collaborations</h1>
+            <h2>Building India’s Quantum Ecosystem</h2>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro">
+        <div class="container">
+            <p>At QPIN Private Limited, collaboration is the cornerstone of our mission to make India a global quantum leader. Partnering with top-tier academic institutions, innovative industries, and forward-thinking government bodies, we’re driving the ₹369 crore 100-qubit project and beyond. Together, we’re solving real-world challenges—from cryptography to climate solutions—while scaling to 100,000 qubits by 2045.</p>
+        </div>
+    </section>
+
+    <!-- Current Partners -->
+    <section class="partners-section">
+        <div class="container">
+            <h3>Our Partners</h3>
+            <div class="partner-carousel">
+                <div class="partner-card">
+                    <img src="https://via.placeholder.com/100?text=IIT" alt="IIT Logo">
+                    <h4>IIT Bombay & Madras</h4>
+                    <p>Collaborating on quantum algorithm development and workforce training for the Quantum India Initiative (QII), scaling to 7,500 trainees by 2030.</p>
+                </div>
+                <div class="partner-card">
+                    <img src="https://via.placeholder.com/100?text=Oxford" alt="Oxford Instruments Logo">
+                    <h4>Oxford Instruments</h4>
+                    <p>Providing the Triton 500 cryostat for our 100-qubit lab, ensuring <10 mK precision for groundbreaking experiments by 2026.</p>
+                </div>
+                <div class="partner-card">
+                    <img src="https://via.placeholder.com/100?text=Zurich" alt="Zurich Instruments Logo">
+                    <h4>Zurich Instruments</h4>
+                    <p>Supplying the Quantum Kit (HDAWG, UHFQA) for 0.1% gate fidelity, powering our 100-qubit processor’s success.</p>
+                </div>
+                <div class="partner-card">
+                    <img src="https://via.placeholder.com/100?text=AWS" alt="AWS Logo">
+                    <h4>Amazon Web Services</h4>
+                    <p>Hosting our Qiskit v1.2.x platform on EC2, enabling secure, scalable quantum computing access by December 2026.</p>
+                </div>
+                <div class="partner-card">
+                    <img src="https://via.placeholder.com/100?text=MoST" alt="MoST Logo">
+                    <h4>Ministry of Science and Technology</h4>
+                    <p>Our backbone, funding ₹369 crore and guiding policy to scale quantum infrastructure to ₹15,000 crore by 2045.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <h3>Success Stories</h3>
+            <div class="story-card">
+                <h4>2025: Zurich Kit Integration</h4>
+                <p>Partnered with Zurich Instruments to integrate the Quantum Kit into our 100-qubit system, achieving a two-qubit gate error rate of 0.1%—a milestone that sets the stage for RCS benchmarking against IBM’s Condor by 2026.</p>
+            </div>
+            <div class="story-card">
+                <h4>2026: IIT Quantum Corps Launch</h4>
+                <p>Collaborated with IIT Bombay to train 2,000 students in quantum programming, launching the Quantum Corps—a talent pool driving India’s 200-qubit upgrade by 2028.</p>
+            </div>
+            <div class="story-card">
+                <h4>2027: AWS Cloud Deployment</h4>
+                <p>With AWS, deployed a secure cloud platform for our 100-qubit processor, enabling researchers nationwide to run Shor’s algorithm in <10 minutes, showcased at the QPIN Quantum Summit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Opportunities -->
+    <section class="collaboration">
+        <div class="container">
+            <h3>Collaborate With Us</h3>
+            <p>Join our quantum journey! Whether you’re an academic institution, industry innovator, or government agency, we’re eager to co-create solutions. Propose a partnership below, and let’s shape India’s quantum future together.</p>
+            <form action="mailto:partnerships@qpin.in" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <select name="type" required>
+                    <option value="" disabled selected>Select Collaboration Type</option>
+                    <option value="Research">Research Project</option>
+                    <option value="Industry">Industry Application</option>
+                    <option value="Training">Training Program</option>
+                    <option value="Other">Other</option>
+                </select>
+                <textarea name="message" rows="5" placeholder="Tell us about your proposal..." required></textarea>
+                <button type="submit">Submit Proposal</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

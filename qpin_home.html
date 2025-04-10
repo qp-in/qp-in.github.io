@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QPIN - Quantum Pioneers of India</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #e0e1dd;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .header {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('https://via.placeholder.com/1920x1080/0d1b2a/1b263b?text=Quantum+Universe') no-repeat center/cover;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        .header h1 {
+            font-size: 60px;
+            font-weight: 700;
+            color: #00c4b4;
+            animation: fadeInDown 1s ease;
+        }
+        .header h2 {
+            font-size: 28px;
+            font-style: italic;
+            color: #778da9;
+            margin: 10px 0 20px;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            opacity: 0;
+        }
+        .header a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #00c4b4;
+            color: #0d1b2a;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+            animation: fadeInUp 1s ease 1s forwards;
+            opacity: 0;
+        }
+        .header a:hover {
+            background: #778da9;
+            color: #e0e1dd;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .section h3 {
+            font-size: 32px;
+            color: #00c4b4;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Vision & Mission */
+        .vision-mission {
+            display: flex;
+            justify-content: space-around;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 40px 0;
+            background: rgba(27, 38, 59, 0.8);
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        .vision, .mission {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background: rgba(13, 27, 42, 0.9);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .vision:hover, .mission:hover {
+            transform: translateY(-10px);
+        }
+        .vision h3, .mission h3 {
+            font-size: 24px;
+        }
+        .vision p, .mission p {
+            font-size: 18px;
+            font-style: italic;
+            color: #e0e1dd;
+        }
+
+        /* Featured Project */
+        .project {
+            background: linear-gradient(45deg, #0d1b2a, #1b263b);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        .project-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        .project-text p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .project-stats {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        .project-stats ul {
+            list-style: none;
+            font-size: 16px;
+        }
+        .project-stats ul li {
+            margin: 15px 0;
+            color: #778da9;
+        }
+        .project-stats ul li strong {
+            color: #00c4b4;
+        }
+        .project a {
+            color: #00c4b4;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        /* Why Quantum */
+        .why-quantum p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        /* Get Involved */
+        .get-involved {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .involved-card {
+            background: rgba(27, 38, 59, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .involved-card:hover {
+            transform: scale(1.05);
+        }
+        .involved-card h4 {
+            font-size: 20px;
+            color: #00c4b4;
+            margin-bottom: 10px;
+        }
+        .involved-card p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 40px; }
+            .header h2 { font-size: 20px; }
+            .vision-mission { flex-direction: column; }
+            .project { flex-direction: column; text-align: center; }
+            .project-stats { text-align: center; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="header-content">
+            <h1>QPIN Private Limited</h1>
+            <h2>Quantum Pioneers of India</h2>
+            <a href="#welcome">Discover More</a>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="section" id="welcome">
+        <div class="container">
+            <h3>Welcome to India’s Quantum Future</h3>
+            <p>QPIN Private Limited is driving India’s quantum revolution, bridging cutting-edge science with real-world impact. Under the Ministry of Science and Technology, Government of India, we are building a world-class quantum ecosystem to solve tomorrow’s challenges—today.</p>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="section">
+        <div class="container">
+            <div class="vision-mission">
+                <div class="vision">
+                    <h3>Our Vision</h3>
+                    <p>"To position India as a global leader in quantum innovation, harnessing cutting-edge quantum technologies to solve the world’s most complex challenges by 2035."</p>
+                </div>
+                <div class="mission">
+                    <h3>Our Mission</h3>
+                    <p>"To accelerate India’s quantum revolution through the development, deployment, and operation of advanced quantum processors, fostering collaboration, innovation, and sustainable technological growth for scientific and societal advancement."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project -->
+    <section class="section project">
+        <div class="container">
+            <h3>Featured Project: 100-Qubit Quantum Processor</h3>
+            <div class="project-text">
+                <p><strong>Budget:</strong> ₹369 Crore | <strong>Completion:</strong> December 1, 2026</p>
+                <p>QPIN is spearheading a groundbreaking ₹369 crore initiative to deliver a state-of-the-art 100-qubit quantum processor by December 2026. Launched on June 2, 2025, this 18-month project procures a high-performance chip, installs it in a world-class lab, and operates it with a skilled team.</p>
+                <p><strong>Why It Matters:</strong> Outpacing global benchmarks at lower cost, it runs advanced algorithms—factoring numbers in minutes, simulating molecules in hours—paving the way for breakthroughs.</p>
+                <p><strong>What’s Next:</strong> Scaling to 1000+ qubits by 2035, cementing India’s quantum leadership.</p>
+                <p><a href="#">Explore the Project</a> | <a href="#">Technical Highlights</a></p>
+            </div>
+            <div class="project-stats">
+                <ul>
+                    <li><strong>Chip:</strong> ₹250 crore</li>
+                    <li><strong>Lab:</strong> ₹60 crore</li>
+                    <li><strong>Team:</strong> ₹30 crore</li>
+                    <li><strong>Software:</strong> ₹22 crore</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Quantum -->
+    <section class="section why-quantum">
+        <div class="container">
+            <h3>Why Quantum Matters</h3>
+            <p>Quantum computing promises to transform industries and societies—unlocking solutions to problems once thought impossible. From secure communications to sustainable energy, QPIN is at the forefront, making India a hub of quantum innovation.</p>
+        </div>
+    </section>
+
+    <!-- Get Involved -->
+    <section class="section">
+        <div class="container">
+            <h3>Get Involved</h3>
+            <div class="get-involved">
+                <div class="involved-card">
+                    <h4>Researchers</h4>
+                    <p>Collaborate on cutting-edge quantum projects.</p>
+                </div>
+                <div class="involved-card">
+                    <h4>Industry</h4>
+                    <p>Partner for quantum-driven solutions.</p>
+                </div>
+                <div class="involved-card">
+                    <h4>Public</h4>
+                    <p>Learn how quantum tech shapes your future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

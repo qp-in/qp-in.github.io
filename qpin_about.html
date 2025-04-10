@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QPIN - About Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #e0e1dd;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 80px 0;
+            background: url('https://via.placeholder.com/1200x400/0d1b2a/1b263b?text=Quantum+Vision') no-repeat center/cover;
+            position: relative;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #00c4b4;
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease;
+        }
+        .header h2 {
+            font-size: 24px;
+            font-style: italic;
+            color: #778da9;
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            opacity: 0;
+        }
+        .intro, .founders, .mission {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .intro h3, .founders h3, .mission h3 {
+            font-size: 32px;
+            color: #00c4b4;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .intro p, .mission p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .founders .profiles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            background: rgba(27, 38, 59, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px 0;
+        }
+        .founders .profile {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        .founders img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #00c4b4;
+            margin-bottom: 15px;
+        }
+        .founders .profile h4 {
+            font-size: 24px;
+            color: #e0e1dd;
+            margin-bottom: 10px;
+        }
+        .founders .profile p {
+            font-size: 16px;
+            color: #e0e1dd;
+            margin-bottom: 15px;
+        }
+        .founders .profile a {
+            color: #00c4b4;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .founders .profile a:hover {
+            text-decoration: underline;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 36px; }
+            .header h2 { font-size: 20px; }
+            .founders .profiles { flex-direction: column; }
+            .founders img { width: 120px; height: 120px; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <h1>About Us</h1>
+            <h2>Pioneers of India’s Quantum Destiny</h2>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro">
+        <div class="container">
+            <h3>Our Essence</h3>
+            <p>QPIN Private Limited is the heartbeat of India’s quantum awakening, forged under the stewardship of the Ministry of Science and Technology. With a groundbreaking ₹369 crore mission to unveil a 100-qubit quantum processor by December 2026, we’re igniting a technological renaissance—blending innovation with purpose to elevate India and enrich society.</p>
+        </div>
+    </section>
+
+    <!-- Founders -->
+    <section class="founders">
+        <div class="container">
+            <h3>Our Founders</h3>
+            <div class="profiles">
+                <!-- Mainaksh Singh -->
+                <div class="profile">
+                    <img src="https://via.placeholder.com/150?text=Mainaksh+Singh" alt="Mainaksh Singh">
+                    <h4>Mainaksh Singh</h4>
+                    <p>The dynamo propelling QPIN forward, Mainaksh Singh brings 17+ years of IT mastery, currently shining as CIO at RealSense Consulting. Armed with a B.Tech. from NIT Hamirpur (2008) and an M.Tech. from NUS Singapore (2017), he’s a maestro of numbers and quantum realms. His fervor for mathematics crafts efficiencies—cutting costs by 15% with AI—while his quantum zeal powers our 100-qubit quest.</p>
+                    <p>A stargazer at heart, Mainaksh envisions quantum tools unraveling cosmic enigmas, and his expertise in elliptic curve cryptography fortifies QPIN against future threats—safeguarding India’s digital frontier. With 500+ professionals mentored and 1,000+ users transformed, he’s the unyielding force inspiring QPIN’s technical triumph.</p>
+                    <p>Discover his world at <a href="https://www.mainaksh.com" target="_blank">mainaksh.com</a> or <a href="https://in.linkedin.com/in/mainakshsingh" target="_blank">LinkedIn</a>.</p>
+                </div>
+                <!-- Shresth Sharma -->
+                <div class="profile">
+                    <img src="https://via.placeholder.com/150?text=Shresth+Sharma" alt="Shresth Sharma">
+                    <h4>Shresth Sharma</h4>
+                    <p>Shresth Sharma, QPIN’s steadfast guardian, wields a BA LLB from CSJM University to anchor our mission in legal and managerial strength. A virtuoso in civil law and IT law, he shields our quantum innovations—securing patents and copyrights for the 100-qubit marvel and beyond. His curiosity for quantum phenomena bridges science and strategy, ensuring QPIN thrives at the nexus of discovery and duty.</p>
+                    <p>As the sentinel of management and recruitment, Shresth builds a resilient team to carry our vision to 2045, safeguarding operations with precision and foresight. Together with Mainaksh, he co-founded QPIN, forging a partnership where technical brilliance meets structural integrity—delivering a quantum legacy for India and the world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="mission">
+        <div class="container">
+            <h3>Our Quest</h3>
+            <p>QPIN is more than a company—it’s a crusade to catapult India into quantum supremacy. Guided by Mainaksh’s technical brilliance and Shresth’s protective stewardship, we’re scaling from 100 qubits in 2026 to 100,000 by 2045. Our alliance with IITs, global innovators, and India’s finest minds crafts solutions—securing data, healing lives, and sustaining our planet—for a brighter, bolder tomorrow.</p>
+        </div>
+    </section>
+</body>
+</html>
