@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QPIN - Careers</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: #e0e1dd;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 80px 0;
+            background: url('https://via.placeholder.com/1200x400/0d1b2a/1b263b?text=Quantum+Horizon') no-repeat center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #00c4b4;
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease;
+        }
+        .header h2 {
+            font-size: 24px;
+            font-style: italic;
+            color: #778da9;
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .intro p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.8s forwards;
+            opacity: 0;
+        }
+
+        /* Job Listings */
+        .job-listings {
+            padding: 60px 0;
+        }
+        .job-card {
+            background: rgba(27, 38, 59, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .job-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 196, 180, 0.4);
+        }
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 196, 180, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .job-card:hover::before {
+            opacity: 1;
+        }
+        .job-card h3 {
+            font-size: 26px;
+            color: #00c4b4;
+            margin-bottom: 10px;
+            z-index: 1;
+            position: relative;
+        }
+        .job-card h4 {
+            font-size: 18px;
+            color: #778da9;
+            margin-bottom: 20px;
+            z-index: 1;
+            position: relative;
+        }
+        .job-card ul {
+            list-style: none;
+            font-size: 16px;
+            z-index: 1;
+            position: relative;
+        }
+        .job-card ul li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .job-card ul li::before {
+            content: '⚛';
+            position: absolute;
+            left: 0;
+            color: #00c4b4;
+            font-size: 14px;
+        }
+        .job-card .apply {
+            margin-top: 20px;
+        }
+        .job-card .apply a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #00c4b4;
+            color: #0d1b2a;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+        .job-card .apply a:hover {
+            background: #778da9;
+            color: #e0e1dd;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 36px; }
+            .header h2 { font-size: 20px; }
+            .job-card { padding: 20px; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <h1>Careers at QPIN</h1>
+            <h2>Join India’s Quantum Revolution</h2>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro">
+        <div class="container">
+            <p>Be part of something extraordinary at QPIN Private Limited! We’re building India’s quantum future with our ₹369 crore 100-qubit project—and we need brilliant minds like yours. Enjoy competitive salaries, cutting-edge work, and perks that make every day exciting. Send your resume to <a href="mailto:careers@qpin.in" style="color: #00c4b4;">careers@qpin.in</a> and let’s shape the world together!</p>
+        </div>
+    </section>
+
+    <!-- Job Listings -->
+    <section class="job-listings">
+        <div class="container">
+            <!-- Quantum Physicist -->
+            <div class="job-card">
+                <h3>Quantum Physicist (6 Positions)</h3>
+                <h4>Timeline: June 2025 - December 2026</h4>
+                <ul>
+                    <li><strong>Role:</strong> Lead quantum processor testing, algorithm validation, and fidelity optimization.</li>
+                    <li><strong>Responsibilities:</strong> Benchmark 100-qubit system (RCS, Shor’s), analyze coherence (T1 >120 µs), publish findings.</li>
+                    <li><strong>Education:</strong> PhD in Quantum Physics or related field.</li>
+                    <li><strong>Experience:</strong> 3-5 years in superconducting qubits or NISQ systems.</li>
+                    <li><strong>Salary:</strong> ₹30-40 lakh/year.</li>
+                    <li><strong>Perks:</strong> Research grants (₹5 lakh), conference travel, health insurance, stock options.</li>
+                </ul>
+                <div class="apply">
+                    <a href="mailto:careers@qpin.in?subject=Quantum Physicist Application">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Quantum Engineer -->
+            <div class="job-card">
+                <h3>Quantum Engineer (5 Positions)</h3>
+                <h4>Timeline: June 2025 - December 2026</h4>
+                <ul>
+                    <li><strong>Role:</strong> Oversee Triton 500 cryostat and Zurich Kit integration, ensure >95% uptime.</li>
+                    <li><strong>Responsibilities:</strong> Tune gate fidelities (>99.9%), manage hardware calibration, troubleshoot noise.</li>
+                    <li><strong>Education:</strong> B.Tech/M.Tech in Electrical Engineering, Physics, or related.</li>
+                    <li><strong>Experience:</strong> 2-4 years in cryogenics or quantum hardware.</li>
+                    <li><strong>Salary:</strong> ₹20-30 lakh/year.</li>
+                    <li><strong>Perks:</strong> Housing allowance, flexible hours, training at Oxford Instruments.</li>
+                </ul>
+                <div class="apply">
+                    <a href="mailto:careers@qpin.in?subject=Quantum Engineer Application">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Software Developer -->
+            <div class="job-card">
+                <h3>Software Developer (5 Positions)</h3>
+                <h4>Timeline: June 2025 - May 2026</h4>
+                <ul>
+                    <li><strong>Role:</strong> Optimize Qiskit v1.2.x for 100-qubit algorithms on AWS EC2.</li>
+                    <li><strong>Responsibilities:</strong> Code Shor’s (depth <50), VQE, error correction; ensure cloud stability.</li>
+                    <li><strong>Education:</strong> B.Tech/M.Tech in Computer Science or equivalent.</li>
+                    <li><strong>Experience:</strong> 3-5 years in quantum programming or HPC.</li>
+                    <li><strong>Salary:</strong> ₹25-35 lakh/year.</li>
+                    <li><strong>Perks:</strong> Remote work options, ₹2 lakh tech stipend, team retreats.</li>
+                </ul>
+                <div class="apply">
+                    <a href="mailto:careers@qpin.in?subject=Software Developer Application">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Lab Technician -->
+            <div class="job-card">
+                <h3>Lab Technician (3 Positions)</h3>
+                <h4>Timeline: September 2025 - December 2026</h4>
+                <ul>
+                    <li><strong>Role:</strong> Support lab operations, maintain Triton 500 (<10 mK, 500 µW).</li>
+                    <li><strong>Responsibilities:</strong> Monitor cryostat, assist with wiring (100+ lines), log performance data.</li>
+                    <li><strong>Education:</strong> Diploma/B.Sc. in Physics, Engineering, or related.</li>
+                    <li><strong>Experience:</strong> 1-3 years in lab environments, cryogenics preferred.</li>
+                    <li><strong>Salary:</strong> ₹15-20 lakh/year.</li>
+                    <li><strong>Perks:</strong> Overtime pay, health benefits, career growth to engineer roles.</li>
+                </ul>
+                <div class="apply">
+                    <a href="mailto:careers@qpin.in?subject=Lab Technician Application">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Project Manager -->
+            <div class="job-card">
+                <h3>Project Manager (1 Position)</h3>
+                <h4>Timeline: June 2025 - December 2026</h4>
+                <ul>
+                    <li><strong>Role:</strong> Oversee ₹369 crore project execution, coordinate 20-person team.</li>
+                    <li><strong>Responsibilities:</strong> Manage procurement (₹250 crore chip), installation (May 2026), timelines.</li>
+                    <li><strong>Education:</strong> MBA or M.Tech in Project Management/Engineering.</li>
+                    <li><strong>Experience:</strong> 5-7 years in tech project management.</li>
+                    <li><strong>Salary:</strong> ₹40-50 lakh/year.</li>
+                    <li><strong>Perks:</strong> Leadership bonus (₹10 lakh), relocation support, premium insurance.</li>
+                </ul>
+                <div class="apply">
+                    <a href="mailto:careers@qpin.in?subject=Project Manager Application">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
